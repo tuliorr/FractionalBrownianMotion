@@ -208,10 +208,11 @@ In the sequence of Figure 1 and 2 we show how the spectral synthesis method "add
 $16^{2}$ (top), $32^{2}$ (middle) and $64^{2}$ (bottom).
 
 Figure 1
+
 ![1](/images/spectral_synthesis_of_a_mountain.png)
 
-
 Figure 2
+
 ![2](/images/spectral_synthesis_of_a_mountain2.png)
 
 Source: The Science of Fractal Images, edited by H. Peitgen and D. Saupe (Springer, New York, 1988).
