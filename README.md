@@ -187,7 +187,7 @@ $$ S(u,\upsilon) = \frac{1}{(u^{2}+\upsilon^{2})^{H+1}} $$
 
 The two-dimensional discrete inverse Fourier transform is
 
-$$ X(x, y) = \sum_{k=0}^{N-1} \sum_{l=0}^{N-1} a_{kl}e^{2\pi i(kx+ly)}
+$$ X(x, y) = \sum_{k=0}^{N-1} \sum_{l=0}^{N-1} a_{kl}e^{2\pi i(kx+ly)} $$
 
 for $x, y = 0, \frac{1}{N}, frac{2}{N}, ..., frac{N-1}{N}$, and thus, we specify for the coefficients $a_{kl}$
 
