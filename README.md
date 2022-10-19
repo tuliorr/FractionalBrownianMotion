@@ -10,7 +10,7 @@ we obtain a random process $X(t)$ , i.e. a function $X$ of a real variable $t$ (
 ## 1.1 The spectral representation of random functions
 
 The spectral synthesis method (also known as the Fourier filtering method) for generating fBm is based on the spectral representation of samples of the process
-$X(t)$. Since the Fourier transform of $X$ generally is undefined we first restrict $X(t)$ to a finite time interval, say $0 < t < T$:
+$X(t)$. Since the Fourier transform of $X$ generally is undefined we first restrict $X(t)$ to a finite time interval, say $0 < t < T$ :
 
 $$ \begin{equation}
     X(t, T) =
@@ -28,8 +28,8 @@ where $F(f, T)$ is the Fourier transform of $X(t, T)$
 
 $$ F(f, T) = \int^{T}_{0} X(t)e^{-2\pi ift}dt $$
 
-Now $|F(f,T)|^{2}df is the contribution to the total energy of $X(t,T)$ from those components with frequencies between $f$ and $f + df$. The average power of $X$
-contained in the interval [0, $T$] is then given by
+Now $|F(f,T)|^{2}df$ is the contribution to the total energy of $X(t,T)$ from those components with frequencies between $f$ and $f + df$. The average power of $X$
+contained in the interval $[0, T]$ is then given by
 
 $$ \frac{1}{T} \int^{\infty}_{-\infty} |F(f,T)|^{2}df $$
 
@@ -49,19 +49,19 @@ frequencies $f$ whose powers (and amplitudes) are determined by the spectral den
 
 The underlying idea of spectral synthesis is that a prescription of the right kind of spectral density $S(f)$ will give rise to fBm with an exponent 0 < $H$ < 1.
 If the random function $X(t)$ contains equal power for all frequencies $f$. this process is called white noise in analogy with the white light made up of radiations
-of all wave lengths. If $S(f)$ is proportional to 1/$f^2$ we obtain the usual brown noise or Brownian motion. In general. a process $X(t)$ with a spectral density
-proportional to 1/$f^{\beta}$ corresponds to fBm with $H = \frac{\beta -1}{2}$:
+of all wave lengths. If $S(f)$ is proportional to 1/ $f^2$ we obtain the usual brown noise or Brownian motion. In general, a process $X(t)$ with a spectral density
+proportional to 1/ $f^{\beta}$ corresponds to fBm with $H = \frac{\beta -1}{2}$:
 
-(1.1)
+Equation 1.1
 
-$$ S(f) \propto \frac{1}{f^\beta} \sim \text{fBm with} \beta = 2H + 1 $$ 
+$$ S(f) \propto \frac{1}{f^\beta} \sim \text{fBm with } \beta = 2H + 1 $$ 
 
 Choosing $\beta$ between 1 and 3 will generate a graph of fBm with a fractal dimension of
 
 $$ D_f = 2 - H = \frac{5-\beta}{2} $$
 
 Let us pause for a moment to explain this relationship between $\beta$ and $H$. Mathematically it can be derived from the fact that the mean square increments
-(which are proportional to $\Delta t^{2H}$ fBm with exponent $H$) are directly related to the autocorrelation function of $X$, which in turn defines the spectral
+(which are proportional to $\Delta t^{2H}$ for fBm with exponent $H$) are directly related to the autocorrelation function of $X$, which in turn defines the spectral
 density by means of a Fourier transform via the Wiener-Khintchine relation. In place of this "pure" approach we propose a simple and more heuristic argument for
 the relation $\beta = 2H + 1$. We start out by restating the fundamental property of fBm: If $X(t)$ denotes fBm with exponent 0 < $H$ < 1 then the properly
 rescaled random function
@@ -86,12 +86,12 @@ and adopt the notation
 $$ \begin{matrix} 
 F_{X}(t,T), F_{Y}(t,T) & \text{Fourier transforms of $X(t,T), Y(t,T)$,}\\
 S_{X}(f,T), S_{Y}(f,T) & \text{spectral densities of $X(t,T), Y(t,T)$,}\\
-S_{X}(f), F_{Y}(f) & \text{spectral densities of $X(t), Y(t)$,}     
+S_{X}(f), S_{Y}(f) & \text{spectral densities of $X(t), Y(t)$,}     
 \end{matrix} $$
 
 We compute
 
-$$ F_{Y}(f,T) = \int^{T}_{0} Y(t)e^{-2\pi ift}dt = \frac{1}{r^H} \int^{rT}_{0} X(s)e^{-2\pi i\frac{f}{r}s}\frac{ds}{r} $$
+$$ F_{Y}(f,T) = \int_{0}^{T} Y(t)e^{-2\pi ift}dt = \frac{1}{r^H} \int_{0}^{rT} X(s)e^{-2\pi i\frac{f}{r}s}\frac{ds}{r} $$
 
 where we have substituted $\frac{s}{r}$ for $t$ and $\frac{ds}{r}$ for $dt$ in the second integral. Thus, clearly
 
@@ -109,7 +109,7 @@ Since $Y$ is just a properly rescaled version of $X$, their spectral densities m
 
 $$ S_{X}(f) = \frac{1}{r^{2H+1}} S_{X}(\frac{f}{r}) $$
 
-Now we formally set $f = 1$ and replace 1/$r$ again by $f$ to finally obtain the desired result (1.1)
+Now we formally set $f = 1$ and replace 1/ $r$ again by $f$ to finally obtain the desired result (1.1)
 
 $$ S_{X}(f) \propto \frac{1}{f^{2H+1}} = \frac{1}{f^{\beta}} $$
 
@@ -117,13 +117,13 @@ $$ S_{X}(f) \propto \frac{1}{f^{2H+1}} = \frac{1}{f^{\beta}} $$
 
 For the practical algorithm we have to translate the above into conditions on the coefficients $a_{k}$ of the discrete fourier transform
 
-(1.2) 
+Equation 1.2
 
 $$ \overline{X}(t) = \sum_{k=0}^{N-1} a_{k}e^{2\pi ikt} $$ 
 
 The coefficients $a_{k}$ are in a 1:1 correspondence with the complex values $\overline{X}(t_k), t_k = \frac{k}{N}, k = 0, 1, ..., N - 1$. The condition to be imposed on the coefficients in order to obtain $S(f) \propto \frac{1}{f^\beta}$ now becomes
 
-(1.3)
+Equation 1.3
 
 $$ E(|a_k|^2) \propto \frac{1}{k^\beta} $$
 
@@ -150,29 +150,29 @@ The advantage of this straight forward method is that it is the purest interpret
 
 In this section we discuss how one can generalize the displacement methods and the spectral synthesis methods to two and three dimensions. The generalization of fractional Brownian motion itself is straight forward. It is a multidimensional process (a random field) $X(t_{1}, t_{2}, ..., t_{n})$ with the properties:
 
-(i) The increments $X(t_{1}, t_{2}, ..., t_{n}) - X(s_{1}, s_{2}, ..., s_{n})$ are Gaussian with mean 0
+  1. The increments $X(t_{1}, t_{2}, ..., t_{n}) - X(s_{1}, s_{2}, ..., s_{n})$ are Gaussian with mean 0
 
-(ii) The variance of the increments $X(t_{1}, t_{2}, ..., t_{n}) - X(s_{1}, s_{2}, ..., s_{n})$ depends only on the distance
+  2. The variance of the increments $X(t_{1}, t_{2}, ..., t_{n}) - X(s_{1}, s_{2}, ..., s_{n})$ depends only on the distance
 
-$$ \sqrt \sum_{i=1}^{n} (t_{i} - s_{i})^2 $$
+$$ \sqrt{\sum_{i=1}^{n} (t_{i} - s_{i})^2} $$
 
 and in fact is proportional to the 2H-th power of the distance, where the parameter $H$ again satisfies $0 < H < 1$. Thus,
 
-(2.1)
+Equation 2.1
 
 $$ E(|X(t_{1}, t_{2}, ..., t_{n}) - X(s_{1}, s_{2}, ..., s_{n})|^2) \propto (\sum_{i=1}^{n} (t_{i} - s_{i})^2)^H $$ 
 
-The random field $X$ again has stationary increments and is isotropic, i.e. all points $X(t_{1}, t_{2}, ..., t_{n})$ and all directions are statistically equivalent. In the
+The random field $X$ again has stationary increments and is isotropic, i.e. all points $(t_{1}, t_{2}, ..., t_{n})$ and all directions are statistically equivalent. In the
 frequency domain we have for the spectral density
 
-(2.2)
+Equation 2.2
 
-$$ S(f_{1}, ..., f_{n}) \propto \frac{1}{(\sqrt \sum_{i=1}^{n} f_{i}^{2})^{2H + n}} $$
+$$ S(f_{1}, ..., f_{n}) \propto \frac{1}{(\sqrt{\sum_{i=1}^{n} f_{i}^{2}})^{2H + n}} $$
 
 This fact can be deduced in the exact same fashion as in the last section for the $\frac{1}{f^\beta}$ law in the one-dimensional case. Therefore we skip these details here. This ensures that $X$ restricted to any straight line will be a $\frac{1}{f^\beta}$ noise corresponding to $2H = \beta - 1$. In analogy with formula (1.1) the fractal dimension of the
 graph of a sample of $X(t_{1}, t_{2}, ..., t_{n})$ is
 
-(2.3)
+Equation 2.3
 
 $$ D = n + 1- H $$
 
@@ -180,8 +180,8 @@ $$ D = n + 1- H $$
 
 We now proceed to the extension of the Fourier filtering method to higher dimensions. In two dimensions the spectral density $S$ generally will depend on two frequency variables
 $u$ and $\upsilon$ corresponding to the $x$ and $y$ directions. But since all directions in the $xy$-plane are equivalent with respect to statistical properties, $S$ depends only
-on $\sqrt{u^{2} + v^{2}}$ . If we cut the surface along a straight line in the $xy$-plane, we expect for the spectral density $S$ of this fBm iIi only one dimension a power law 
-1/$f^\beta$ as before. This requirement implies (see (2.2)) for the two-dimensional spectral density to behave like
+on $\sqrt{u^{2} + v^{2}}$ . If we cut the surface along a straight line in the $xy$-plane, we expect for the spectral density $S$ of this fBm in only one dimension a power law 
+1/ $f^\beta$ as before. This requirement implies (see Equation 2.2) for the two-dimensional spectral density to behave like
 
 $$ S(u,\upsilon) = \frac{1}{(u^{2}+\upsilon^{2})^{H+1}} $$
 
@@ -189,7 +189,7 @@ The two-dimensional discrete inverse Fourier transform is
 
 $$ X(x, y) = \sum_{k=0}^{N-1} \sum_{l=0}^{N-1} a_{kl}e^{2\pi i(kx+ly)} $$
 
-for $x, y = 0, \frac{1}{N}, frac{2}{N}, ..., frac{N-1}{N}$, and thus, we specify for the coefficients $a_{kl}$
+for $x, y = 0, \frac{1}{N}, \frac{2}{N}, ..., \frac{N-1}{N}$, and thus, we specify for the coefficients $a_{kl}$
 
 $$ E(|a_{kl}|^2) \propto \frac{1}{(k^{2} + l^{2})^{H+1}} $$
 
@@ -208,11 +208,10 @@ In the sequence of Figure 1 and 2 we show how the spectral synthesis method "add
 $16^{2}$ (top), $32^{2}$ (middle) and $64^{2}$ (bottom).
 
 Figure 1
-
 ![1](/images/spectral_synthesis_of_a_mountain.png)
 
-Figure 2
 
+Figure 2
 ![2](/images/spectral_synthesis_of_a_mountain2.png)
 
 Source: The Science of Fractal Images, edited by H. Peitgen and D. Saupe (Springer, New York, 1988).
