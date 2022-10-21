@@ -160,7 +160,7 @@ frequency domain we have for the spectral density
 
 Equation 2.2
 
-$$ S(f_{1}, ..., f_{n}) \propto \frac{1}{\Bigl\sqrt{\sum_{i=1}^{n} f_{i}^{2}}\Bigr^{2H + n}} $$
+$$ S(f_{1}, ..., f_{n}) \propto \frac{1}{(\sqrt{\sum_{i=1}^{n} f_{i}^{2})}^{2H + n} $$
 
 This fact can be deduced in the exact same fashion as in the last section for the $\frac{1}{f^\beta}$ law in the one-dimensional case. Therefore we skip these details here. This ensures that $X$ restricted to any straight line will be a $\frac{1}{f^\beta}$ noise corresponding to $2H = \beta - 1$. In analogy with formula (1.1) the fractal dimension of the
 graph of a sample of $X(t_{1}, t_{2}, ..., t_{n})$ is
